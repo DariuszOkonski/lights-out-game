@@ -67,7 +67,12 @@ class Board extends Component {
 
   render() {
     if (this.state.hasWon) {
-      return <h1>YOU WON!!!</h1>
+      return (
+        <div className="Board-title">
+          <span className="neon-orange">YOU</span>
+          <span className="neon-blue">WON</span>
+        </div>
+      )
     }
 
     let tblBoard = [];
@@ -87,11 +92,17 @@ class Board extends Component {
     }
 
     return (
-      <table className="Board">
-        <tbody>
-          {tblBoard}
-        </tbody>
-      </table>
+      <div>
+        <div className="Board-title">
+          <div className="neon-orange">Lights</div>
+          <div className="neon-blue">Out</div>
+        </div>
+        <table className="Board">
+          <tbody>
+            {tblBoard}
+          </tbody>
+        </table>
+      </div>
     )
     // make table board
 

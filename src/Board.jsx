@@ -57,6 +57,7 @@ class Board extends Component {
 
 
     let hasWon = false;
+    hasWon = board.every(row => row.every(cell => !cell));
 
     this.setState({ board, hasWon });
   }
@@ -65,6 +66,10 @@ class Board extends Component {
   /** Render game board or winning message. */
 
   render() {
+    if (this.state.hasWon) {
+      return <h1>YOU WON!!!</h1>
+    }
+
     let tblBoard = [];
     for (let y = 0; y < this.props.nrows; y++) {
       let row = [];
